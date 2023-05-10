@@ -67,6 +67,31 @@ class Solution:
             else:
                 cost += 1
         return cost
+
+"""
+Highest Product problem.
+Given an array of N integers. Find the highest product
+by multiplying 3 elements.
+
+Input: [1, 2, 3, 4]
+Out: 2 * 3 * 4 = 24
+
+take the highest 3 elements
+it will not work for negative elements in array
+even if it is sorted.
+
+"""
+#  first test case: take the highest 3 elements
+#  remaining test case: consider lowest 2 & highest 1
+
+class Solution2:
+    def maxp3(self, A):
+        A = sorted(A)
+
+        hi3 = A[-1] * A[-1] * A[-3]
+        lo2hi1 = A[0] * A[1] * A[-1]
+
+        return max(hi3, lo2hi1)
     
 if __name__ == "__main__":
-    print(Solution().bulbs([0, 1, 0, 1, 1, 0, 1, 1]))
+    print(Solution2().maxp3([5, 4, 3, 2, -1, -10, 10]))
