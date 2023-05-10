@@ -35,5 +35,30 @@
 
 # [1, 0, 1], [1, 1, 0], [1, 1, 1] cost 2
 
+# time: O(N*N) space: O(1)
 
+# can we optimize this?
 
+# [0, 1, 0, 1, 1, 0, 1, 1]
+# [1, 0, 1, 0, 0, 1, 0, 0]
+# []
+
+class Solution:
+
+    def bulbs(self, A):
+        cost = 0
+
+        for b in A:
+            if cost % 2:
+                b = b
+            else:
+                b = not b
+            
+            if b % 2 == 1:
+                continue
+            else:
+                cost += 1
+        return cost
+    
+if __name__ == "__main__":
+    print(Solution().bulbs([0, 1, 0, 1, 1, 0, 1, 1]))
