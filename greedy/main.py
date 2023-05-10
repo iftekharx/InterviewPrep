@@ -13,3 +13,7 @@
         2
 """
 
+# if you choose 3 it adds up to 3+1+7+2+5 = 18
+# so you selected greedily. (highest value)
+# and got optimal answer
+
