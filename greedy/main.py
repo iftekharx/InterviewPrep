@@ -17,3 +17,23 @@
 # so you selected greedily. (highest value)
 # and got optimal answer
 
+""" It does not work always for greedy solutions """
+
+# Bulbs problem
+""" Given N bulbs, either on (1) or off (0).
+    Turning on ith bulb causes all reamining
+    bulbs on the right to flip.
+
+    find the min number of switches to turn 
+    all the bulbs on.
+"""
+
+# [1, 0, 1] cost = 0
+# algo:
+# if the bulb is on go on (continue), otherwise 
+# cost ++ & flip the rest
+
+# [1, 0, 1], [1, 1, 0], [1, 1, 1] cost 2
+
+
+
