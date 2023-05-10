@@ -95,3 +95,30 @@ class Solution2:
     
 if __name__ == "__main__":
     print(Solution2().maxp3([5, 4, 3, 2, -1, -10, 10]))
+
+
+"""
+Activity selection problem
+Given n activities with their start and finish times.
+Select the maximum number of activities that can be performed 
+by a single person, assuming that a person can only work on 
+a single activity at a time.
+"""
+
+"""
+Activity         A1       A2      A3     A4     A5    A6
+Start             0        3       1     5      5      8
+Finish            6        4       2     9      7      9
+"""
+
+# step1: sort the activities according to their finishing
+# time.
+
+#sorted
+"""
+Activity         A3       A2      A1     A5     A6    A4
+Start             1        3       0     5      8      5
+Finish            2        4       6     7      9      9
+"""
+
+# step2:  
