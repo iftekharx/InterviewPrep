@@ -42,7 +42,15 @@
 # [0, 1, 0, 1, 1, 0, 1, 1]
 # [1, 0, 1, 0, 0, 1, 0, 0]
 # []
+# optimized solution
+"""
+[0, 1, 0, {1, 1, 0, 1, 1}] -> [1, 0, 1, 0, 0, 1, 0, 0]
+                         -> [1, 1, 0, 1, 1, 0, 1, 1]
+[1, 1, 0, {1, 1, 0, 1, 1}] repeated.
+if you 2 flips everything on the right side becomes flipped 
+again. reverted to original states.
 
+"""
 class Solution:
 
     def bulbs(self, A):
