@@ -121,4 +121,14 @@ Start             1        3       0     5      8      5
 Finish            2        4       6     7      9      9
 """
 
-# step2:  
+# step2:  Select the first activity from the sorted array
+# and print it
+# A3
+
+# step3: If the start time of next activity is greater than or equal
+# to the finish time of previously selected activity then select this
+# activity and print it.
+# A3 -> A2 -> A5 -> A6
+# Total : 4 activities
+
+
