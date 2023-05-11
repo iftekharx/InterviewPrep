@@ -1,0 +1,7 @@
+Binary tree are those trees which have at most 2 children.
+exactly 1 root
+exactly 1 path b/w root and any node
+empty tree is also a binary tree
+A -> B -> C -> A // not binary tree because root not identified here
+
+
