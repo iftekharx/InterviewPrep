@@ -11,9 +11,11 @@ uses Queue.
 // enqueue: add object on tail
 // dequeue: remove object from head
 
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
+import java.util.PriorityQueue;
 
 public class Main{
 
@@ -53,6 +55,23 @@ public class Main{
 
         System.out.println(queue);
         System.out.println(queue.peek());
+
+        Queue<Double> queue2 = new PriorityQueue<>(Collections.reverseOrder()); // orders
+
+        queue2.offer(3.0);
+        queue2.offer(2.4);
+        queue2.offer(4.0);
+        queue2.offer(1.5);
+
+        while(!queue2.isEmpty()){
+
+            System.out.println(queue2.poll());
+
+        }
+
+
+
+
 
 
     }
