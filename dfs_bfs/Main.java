@@ -11,6 +11,7 @@ uses Queue.
 // enqueue: add object on tail
 // dequeue: remove object from head
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.Queue;
@@ -68,6 +69,34 @@ public class Main{
             System.out.println(queue2.poll());
 
         }
+
+        // Linked List
+        // doubly linked list contain previous>data>next
+
+        LinkedList<String> linkedList = new LinkedList<String>();
+
+        linkedList.push("A"); // stack
+        linkedList.push("B");
+        linkedList.push("C");
+        linkedList.pop();
+
+        linkedList.offer("D"); // queue
+        linkedList.offer("E");
+
+        linkedList.add("F");
+        linkedList.remove("E");
+        System.out.println(linkedList.peekFirst());
+        System.out.println(linkedList.peekLast());
+        linkedList.addFirst("X");
+
+        System.out.println(linkedList);
+        
+
+        ArrayList<String> arrList = new ArrayList<>();
+        
+
+
+
 
 
 
