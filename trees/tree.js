@@ -49,4 +49,45 @@ const depthFirstValues = (root) => {
   return result
 }
 
-console.log(depthFirstValues(a))
+const depthFirstRecursive = (root) => {
+  if (root === null) return []
+  const leftValues = depthFirstRecursive(root.left) // b d e
+  const rightValues = depthFirstRecursive(root.right) // c f
+  return [root.val, ...leftValues, ...rightValues]
+}
+
+console.log(depthFirstRecursive(a))
+
+// breadth first search
+/*
+     a
+    /  \
+   b   c
+ |  \   \
+ d  e   f
+ 
+ BFS: a b c d e f (uses queue data structure)
+ DFS: a, b, d, e, c, f
+ O(n) time complex.
+ space: O(n)
+*/
+
+const breadthFirstValues = (root) => {
+  if (root === null) return []
+
+  const values = []
+
+  const queue = [root]
+  while (queue.length > 0) {
+    const current = queue.shift() // left shift takes the first element and pops it
+    //console.log(current)
+    values.push(current.val)
+
+    if (current.left !== null) queue.push(current.left)
+    if (current.right !== null) queue.push(current.right)
+  }
+
+  return values
+}
+
+console.log(breadthFirstValues(a))
