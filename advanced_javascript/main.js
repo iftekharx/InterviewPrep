@@ -163,3 +163,14 @@ const obj = {
 for (const word of obj) {
   console.log(word)
 }
+
+function* generatorFunction() {
+  yield 'hello'
+  yield 'world'
+}
+
+const genObj = generatorFunction()
+
+for (const word of genObj) {
+  console.log(word)
+}
