@@ -29,32 +29,107 @@
 // fn()
 
 // Function Currying
-function sum(a, b, c) {
-  return a + b + c
+// function sum(a, b, c) {
+//   return a + b + c
+// }
+
+// console.log(sum(2, 3, 5))
+
+// function curry(fn) {
+//   return function (a) {
+//     return function (b) {
+//       return function (c) {
+//         return fn(a, b, c)
+//       }
+//     }
+//   }
+// }
+// const carriedSum = curry(sum)
+// console.log(carriedSum(2)(3)(5))
+
+// const add2 = carriedSum(2)
+// const add3 = add2(3)
+// const add5 = add3(5)
+
+// console.log(add5)
+
+// const person = {
+//   name: 'iftekhar',
+//   sayMyName: function () {
+//     console.log(`My name is ${this.name}`)
+//   },
+// }
+
+// globalThis.name = 'Antman'
+
+// function sayMyName() {
+//   console.log(`My name is ${this.name}`)
+// }
+
+// sayMyName.call(person)
+
+// function Person(name) {
+//   // this = {}
+//   this.name = name
+// }
+
+// const p1 = new Person('Batman')
+// const p2 = new Person('Spiderman')
+// console.log(p1.name, p2.name)
+
+// sayMyName()
+
+function Person(fName, lName) {
+  this.firstName = fName
+  this.lastName = lName
+}
+Person.prototype.getFullName = function () {
+  return this.firstName + ' ' + this.lastName
 }
 
-console.log(sum(2, 3, 5))
+function SuperHero(fName, lName) {
+  Person.call(this, fName, lName)
+  this.isSuperHero = true
+}
 
-function curry(fn) {
-  return function (a) {
-    return function (b) {
-      return function (c) {
-        return fn(a, b, c)
-      }
-    }
+SuperHero.prototype = Object.create(Person.prototype)
+
+const hero = new SuperHero('Bruce', 'Wayne')
+SuperHero.prototype.constructor = SuperHero
+
+console.log(hero.getFullName())
+
+const person1 = new Person('Bruce', 'Wayne')
+const person2 = new Person('Cal', 'wziniak')
+
+console.log(person2.getFullName())
+
+class Person2 {
+  constructor(fName, lName) {
+    this.firstName = fName
+    this.lastName = lName
+  }
+
+  sayMyName() {
+    return this.firstName + ' ' + this.lastName
   }
 }
-const carriedSum = curry(sum)
-console.log(carriedSum(2)(3)(5))
 
-const add2 = carriedSum(2)
-const add3 = add2(3)
-const add5 = add3(5)
+const classP1 = new Person2('Spida', 'Lcisn')
 
-console.log(add5)
+console.log(classP1.sayMyName())
 
-function sayMyName(name) {
-  console.log(`My name is ${name}`)
+class SuperHero2 extends Person2 {
+  constructor(fName, lName) {
+    super(fName, lName)
+    this.isSuperHero = true
+  }
+
+  fightCrime() {
+    console.log('Fight Fight Fight!')
+  }
 }
 
-sayMyName('Walter White')
+const batman2 = new SuperHero2('Bruce', 'Wayne')
+
+console.log(batman2.sayMyName())
