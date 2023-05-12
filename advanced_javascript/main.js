@@ -133,3 +133,33 @@ class SuperHero2 extends Person2 {
 const batman2 = new SuperHero2('Bruce', 'Wayne')
 
 console.log(batman2.sayMyName())
+
+// iterables
+const arr = [1, 2, 3, 4, 5]
+
+for (const a of arr) {
+  console.log(a)
+}
+
+const obj = {
+  [Symbol.iterator]: function () {
+    let step = 0
+    const iterator = {
+      next: function () {
+        step++
+        if (step == 1) {
+          return { value: 'Hello', done: false }
+        }
+        if (step == 2) {
+          return { value: 'World', done: false }
+        }
+        return { value: undefined, done: true }
+      },
+    }
+    return iterator
+  },
+}
+
+for (const word of obj) {
+  console.log(word)
+}
