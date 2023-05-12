@@ -29,7 +29,8 @@
    $total = ceil($x); // round up
    // some other funcs. abs, sqrt, pow, max, min, pi
 
-   
+   $num = rand(90, 100);
+   echo $num;
 
 
 
