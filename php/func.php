@@ -24,7 +24,7 @@
    $total = null;
 
     // math functions
-   $total = round($x); // round up
+   $total = round($x, 2); // round up 2 decimal places
    $total = floor($x); // round down
    $total = ceil($x); // round up
    // some other funcs. abs, sqrt, pow, max, min, pi

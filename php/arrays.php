@@ -6,7 +6,6 @@ echo var_dump($capitals);
 
 foreach($capitals as $key => $value){
     echo $key." ".$value;
-
 }
 
 ?>
