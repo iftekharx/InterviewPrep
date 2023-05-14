@@ -71,3 +71,65 @@ const promise5 = new Promise((resolve, reject) => {
 Promise.race([promise4, promise5]).then((value) => {
   console.log(value)
 })
+
+// async await
+async function greetA() {
+  let promise6 = new Promise((resolve, reject) => {
+    setTimeout(() => resolve('Hello'), 1000)
+  })
+  let result = await promise6
+  console.log(result)
+}
+
+// greetA()
+
+function resolveHello() {
+  return new Promise((resolve) => {
+    setTimeout(function () {
+      resolve('Hello')
+    }, 2000)
+  })
+}
+
+function resolveWorld() {
+  return new Promise((resolve) => {
+    setTimeout(function () {
+      resolve('World')
+    }, 1000)
+  })
+}
+
+async function sequentialStart() {
+  const hello = await resolveHello()
+  const world = await resolveWorld()
+  console.log(world)
+}
+
+async function concurrentStart() {
+  const hello = resolveHello()
+  const world = resolveWorld()
+
+  console.log(await hello)
+  console.log(await world) // immediately logged to console
+}
+
+// concurrentStart() // Hello, World, sequential
+
+// parallel exec
+
+function parallel() {
+  Promise.all([
+    (async () => console.log(await resolveHello()))(),
+    (async () => console.log(await resolveWorld()))(),
+  ])
+}
+
+parallel() // World, Hello
+
+// Event loop
+const pr = fetch('www.udemy.com/vishwas')
+pr.then((value) => {
+  console.log('promise value is ', value)
+})
+
+console.log('second')
