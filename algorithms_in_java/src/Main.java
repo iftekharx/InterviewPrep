@@ -1,3 +1,5 @@
+
+
 public class Main {
 
     public static int[] resize(int[] arr, int capacity){
@@ -31,9 +33,22 @@ public class Main {
 //        arr[5] = 78;
 //
 //        System.out.println(arr.length);
+//    	
+//    	String x = "madam";
+//    	System.out.println(isPallindrome(x));
     	
-    	String x = "madam";
-    	System.out.println(isPallindrome(x));
+    	ListNode<Integer> head;
+    	
+    	head = new ListNode<Integer>(1);
+    	ListNode<Integer> second = new ListNode<Integer>(2);
+    	ListNode<Integer> third = new ListNode<Integer>(3);
+    	
+    	second.next = third;
+    	head.next = second;
+
+    	
+    	
+    	
         
     }
     
