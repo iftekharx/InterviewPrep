@@ -25,6 +25,18 @@ public class Main {
     	}
     	return true;
     }
+    
+    public static void TraverseLinkedList(ListNode head) {
+    	
+    	ListNode current = head;
+    	while(current != null) 
+    	{
+    		System.out.print(current.data + " --> ");
+    		current = current.next;
+    	}
+    	System.out.print("null");
+    	
+    }
 
     public static void main(String[] args) {
 //        int[] arr = {1, 2, 3, 4, 5};
@@ -45,6 +57,10 @@ public class Main {
     	
     	second.next = third;
     	head.next = second;
+    	
+    	TraverseLinkedList(head);
+    	
+    	
 
     	
     	
