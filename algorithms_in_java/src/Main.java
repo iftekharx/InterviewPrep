@@ -48,6 +48,21 @@ public class Main {
     	
     	
     }
+    
+    public static void InsertLast(int value) {
+    	ListNode<Integer> newNode = new ListNode<Integer>(value);
+    	if(head == null) {
+    		head = newNode;
+    		return;
+    	}
+    	
+    	ListNode current = head;
+    	while(null != current.next) {
+    		current = current.next;
+    	}
+    	
+    	current.next = newNode;
+    }
    
 
     public static void main(String[] args) {
@@ -73,6 +88,7 @@ public class Main {
     	TraverseLinkedList(head);
     	
     	InsertFirst(67);
+    	InsertLast(100);
     	
     	TraverseLinkedList(head);
     	
