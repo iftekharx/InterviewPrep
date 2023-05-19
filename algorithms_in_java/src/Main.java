@@ -49,6 +49,30 @@ public class Main {
     	
     }
     
+    public static void InsertPos(int value, int position) {
+    	 // 1 -> 4 -> 5
+        // 1 -> 6 -> 4 -> 5
+        ListNode node = new ListNode(value);
+
+        if (position == 1) {
+           node.next = head;
+           head = node;
+        } else {
+           ListNode previous = head;
+           int count = 1; // position - 1
+
+           while (count < position - 1) {
+              previous = previous.next;
+              count++;
+           }
+
+           ListNode current = previous.next;
+           previous.next = node;
+           node.next = current;
+        }
+
+    }
+    
     public static void InsertLast(int value) {
     	ListNode<Integer> newNode = new ListNode<Integer>(value);
     	if(head == null) {
@@ -89,6 +113,7 @@ public class Main {
     	
     	InsertFirst(67);
     	InsertLast(100);
+    	InsertPos(2, 89);
     	
     	TraverseLinkedList(head);
     	
