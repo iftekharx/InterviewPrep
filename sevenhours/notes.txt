@@ -1,0 +1,19 @@
+defer means load the dom before javascript
+
+rootDir: "./src"
+outDir: "./build/js"
+in tsconfig config file
+
+es5 is the older version and es2016 is the newer ver.
+(var)
+
+  "include": ["src"]
+tsc -w
+
+strongly typed language requires type specification
+static typing and dynamic typing
+
+ts is statically typed lang this means types are checked at compile time
+js is dyanmic typed lang and checked at run time.
+
+
