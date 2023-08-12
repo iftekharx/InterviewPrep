@@ -1,0 +1,48 @@
+Three core concepts
+Cake shop scenario
+Redux: Store (Shop here)
+Purpose: Holds the state of your app
+
+Cake ordered - Action - Describes what happened
+
+Shopkeeper is Reducer : Ties the store and actions together and decides how to update the state.
+
+Three principles of Redux
+1. The global state of your application is stored inside a single store
+Maintain our application state in a single object which would be managed by redux store.
+
+Cake Shop: Lets assume we are tracking the number of cakes on the shelf
+{
+    numberOfCakes: 10
+}
+
+2. The only way to change a state is to dispatch an action, an object that describes what happened.
+To update the state of your app, you need to let redux know about that with an action.
+not allowed to directly update the state object.
+
+Cake shop:
+Scan the QR code and place an order - CAKE_ORDERED
+{
+    type: "CAKE_ORDERED"
+}
+
+3. To specify how the state tree is updated based on actions, you write pure reducers.
+Reducer - (previousState, action) => newState
+
+Cake Shop:
+Reducer is the Shopkeeper
+
+const reducer = (state = initialState, action) => {
+    switch(action.type){
+        case CAKE_ORDERED:
+             return {
+                numOfCakes: state.numOfCakes - 1;
+             }
+    }
+}
+
+Visualization:
+JavascriptApp -> Redux Store(State) (JSApp cannot directly update state)
+Redux Store -> Javascript app  
+Javascript App -> dispatch(Action) -> Reducer -> Redux Store
+

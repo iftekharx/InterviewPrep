@@ -63,6 +63,9 @@ class Flutist implements Musician {
   }
 }
 
+const f = new Flutist("nadsoindas", "asdijoidas");
+f.play("playing");
+
 const Page = new Flutist("Jimmy", "flute");
 console.log(Page.play("turkish flute tune"));
 
@@ -108,8 +111,8 @@ class Bands {
 }
 
 const MyBands = new Bands();
-MyBands.data = ["1asd", "adsdas"];
-console.log(MyBands.data);
+MyBands.data = ["1asd", "adsdas"]; // setter
+console.log(MyBands.data); // getter
 
 MyBands.data = [...MyBands.data, "lastitem"];
 console.log(MyBands.data);
