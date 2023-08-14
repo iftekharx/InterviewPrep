@@ -15,12 +15,20 @@ import FormatUnderlinedIcon from "@mui/icons-material/FormatUnderlined";
 
 export const MuiButton = () => {
   const [formats, setFormats] = useState<string[]>([]);
+  const [singleFormat, setSingleFormat] = useState<string | null>(null);
 
   const handleFormatChange = (
     _event: React.MouseEvent<HTMLElement>,
     updatedFormats: string[]
   ) => {
     setFormats(updatedFormats);
+  };
+
+  const handleFormatChangeSingle = (
+    _event: React.MouseEvent<HTMLElement>,
+    updatedFormats: string | null
+  ) => {
+    setSingleFormat(updatedFormats);
   };
 
   return (
@@ -101,7 +109,7 @@ export const MuiButton = () => {
 
       <Stack direction={"row"}>
         <Typography variant="h3" color={"success"}>
-          {formats}
+          {formats.map((format) => format + ", ")}
         </Typography>
       </Stack>
 
@@ -110,6 +118,31 @@ export const MuiButton = () => {
           aria-label="text-formatting"
           value={formats}
           onChange={handleFormatChange}
+        >
+          <ToggleButton value={"bold"} aria-label="bold">
+            <FormatBoldIcon />
+          </ToggleButton>
+          <ToggleButton value={"italic"} aria-label="italic">
+            <FormatItalicIcon />
+          </ToggleButton>
+          <ToggleButton value={"underline"} aria-label="underline">
+            <FormatUnderlinedIcon />
+          </ToggleButton>
+        </ToggleButtonGroup>
+      </Stack>
+
+      <Stack direction={"row"}>
+        <Typography variant="h3" color={"success"}>
+          {singleFormat}
+        </Typography>
+      </Stack>
+
+      <Stack direction={"row"}>
+        <ToggleButtonGroup
+          aria-label="text-formatting"
+          value={singleFormat}
+          onChange={handleFormatChangeSingle}
+          exclusive
         >
           <ToggleButton value={"bold"} aria-label="bold">
             <FormatBoldIcon />
