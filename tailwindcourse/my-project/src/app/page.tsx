@@ -10,19 +10,16 @@ export default function Home() {
         Hello World!
       </h1>
       <h1 className="bg-[#bada55] text-sm lg:text-lg">Hello long sentence</h1>
-
       <h1 className="text-3xl lowercase">Title 1</h1>
       <h2 className="text-2xl">Title 2</h2>
       <h3>Title 3</h3>
       <p className="text-base">A regular paragraph</p>
       <p className="text-sm">A description paragraph</p>
       <p className="text-xs note">A little note</p>
-
       <div className="flex space-x-4 min-h-screen">
         <div className="w-2/5 min-w-min bg-red-500 ">Sidebar</div>
         <div className="w-3/5  bg-green-500">Main Content</div>
       </div>
-
       <div style={{ width: "500px" }}>
         <p className="truncate">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
@@ -94,7 +91,6 @@ export default function Home() {
 
         <p className="bg-red-400 p-4 m-4 font-bold text-white">Padding</p>
       </div>
-
       <div className="Parent">
         <div>Header</div>
         <div className="flex">
@@ -105,7 +101,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-
       <div className="Parent">
         <div>Header</div>
         <div className="flex">
@@ -114,10 +109,8 @@ export default function Home() {
           <div className="basis-1/4">AnotherSidebar</div>
         </div>
       </div>
-
       <br />
       <br />
-
       <div className="Parent">
         <div>Header</div>
         <div className="flex flex-col md:flex-row">
@@ -125,11 +118,8 @@ export default function Home() {
           <div className="w-full bg-orange-400">Sidebar</div>
         </div>
       </div>
-
       <br />
-
       <br />
-
       <div className="Parent">
         <div>Header</div>
         <div className="flex flex-col md:flex-row">
@@ -141,7 +131,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-
       <div className="Parent">
         <div>Header</div>
         <div className="flex justify-center">
@@ -149,7 +138,6 @@ export default function Home() {
           <div>Main Content</div>
         </div>
       </div>
-
       <div className="Parent">
         <div>Header</div>
         <div className="flex justify-between">
@@ -157,7 +145,6 @@ export default function Home() {
           <div>Main Content</div>
         </div>
       </div>
-
       <div className="Parent">
         <div>Header</div>
         <div className="flex justify-evenly items-baseline">
@@ -173,6 +160,44 @@ export default function Home() {
               officia
             </p>
           </div>
+        </div>
+      </div>
+      <div className="container mx-auto">
+        <div className="grid lg:grid-cols-4  gap-4 md:grid-cols-2">
+          <div className="bg-sky-500 p-6 rounded-lg">1</div>
+          <div className="bg-sky-500 p-6 rounded-lg">2</div>
+          <div className="bg-sky-500 p-6 rounded-lg">3</div>
+          <div className="bg-sky-500 p-6 rounded-lg col-span-2">4</div>
+          <div className="bg-sky-500 p-6 rounded-lg">5</div>
+        </div>
+      </div>
+      <div className="container mx-auto">
+        <div className="grid lg:grid-cols-4  gap-4 md:grid-cols-2">
+          <div className="col-start-2 bg-sky-500 p-6 rounded-lg">1</div>
+          <div className="bg-sky-500 p-6 rounded-lg">2</div>
+          <div className="col-end-1 bg-sky-500 p-6 rounded-lg">3</div>
+          <div className="bg-sky-500 p-6 rounded-lg col-span-2">4</div>
+          <div className="bg-sky-500 p-6 rounded-lg">5</div>
+        </div>
+      </div>
+      auto size
+      <div className="container mx-auto">
+        <div className="grid lg:grid-cols-4  gap-4 md:grid-cols-2 auto-cols-max">
+          <div className="bg-sky-500 p-6 rounded-lg">1</div>
+          <div className="bg-sky-500 p-6 rounded-lg">2</div>
+          <div className="bg-sky-500 p-6 rounded-lg">3</div>
+          <div className="bg-sky-500 p-6 rounded-lg col-span-2">4</div>
+          <div className="bg-sky-500 p-6 rounded-lg">5</div>
+        </div>
+      </div>
+      grid rows
+      <div className="container mx-auto">
+        <div className="grid grid-flow-col grid-rows-4 gap-4">
+          <div className="bg-sky-500 p-6 rounded-lg">1</div>
+          <div className="bg-sky-500 p-6 rounded-lg">2</div>
+          <div className="bg-sky-500 p-6 rounded-lg">3</div>
+          <div className="bg-sky-500 p-6 rounded-lg">4</div>
+          <div className="bg-sky-500 p-6 rounded-lg">5</div>
         </div>
       </div>
     </div>
